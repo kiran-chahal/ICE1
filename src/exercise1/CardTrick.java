@@ -8,31 +8,58 @@ package exercise1;
  * @author dancye
  * @author Paul Bonenfant Jan 25, 2022 
  */
+import java.util.Scanner;
 public class CardTrick {
     
     public static void main(String[] args) {
         
         Card[] hand = new Card[7];
 
-        for (int i = 0; i < hand.length; i++) {
+        /*for(int i = 0; i < hand.length; i++) {
             Card card = new Card();
             //card.setValue(insert call to random number generator here)
             // 
+            card.setValue((int)(Math.random()*10 + 1));
+            card.setSuit(Card.SUITS[(int)(Math.random()*4)]);
             //card.setSuit(Card.SUITS[insert call to random number between 0-3 here])
             // Hint: You can use Random -> random.nextInt(n) to get a random number between 0 and n-1 (inclusive)
             //       Don't worry about duplicates at this point
-        }
+        }*/
 
-        // insert code to ask the user for Card value and suit, create their card
-        // and search the hand here. 
-        // Hint: You can ask for values 1 to 10, and then
-        //       11 for jack, 12 for queen, etc. (remember arrays are 0-based though)
-        //       1 for Hearts, 2 for Diamonds, etc. (remember arrays are 0-based though)
-        // 
-        // Then loop through the cards in the array to see if there's a match.
-        
-        // If the guess is successful, invoke the printInfo() method below.
-        
+        //Card[] hand = new Card[7];
+        hand[0]= new Card();
+        hand[0].setValue(1);
+        hand[0].setSuit("Hearts");        
+        hand[1]= new Card();
+        hand[1].setValue(2);
+        hand[1].setSuit("Clubs");        
+        hand[2]= new Card();
+        hand[2].setValue(3);
+        hand[2].setSuit("Diomonds");
+        hand[3]= new Card();
+        hand[3].setValue(4);
+        hand[3].setSuit("Spades");
+        hand[4]= new Card();
+        hand[4].setValue(5);
+        hand[4].setSuit("Clubs");
+        hand[5]= new Card();
+        hand[5].setValue(12);
+        hand[5].setSuit("Hearts");
+        hand[6]= new Card();
+        hand[6].setValue(11);
+        hand[6].setSuit("Hearts");
+       
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter value : ");
+        int userValue =input.nextInt();
+        System.out.println("Enter Suit : ");
+        String userSuit= input.nextLine();
+        for(int i =0;i<hand.length;i++){
+            if(hand[i].getValue()==userValue &&
+               hand[i].getSuit().equals(userSuit)){
+                printInfo();
+            }//end of if
+        }//end of for
     }
 
     /**
