@@ -8,8 +8,10 @@ package exercise1;
  * @author dancye
  * @author Kiran on Feb 08,2023
  */
+//i am done.
 import java.util.Scanner;
 public class CardTrick {
+    //is done, by Kiran.
     
     public static void main(String[] args) {
         
